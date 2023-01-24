@@ -1,0 +1,77 @@
+.button {
+  display: inline-block;
+  padding: 0.75em 2em;
+  color: #fff;
+  font-weight: bold;
+  background-image: linear-gradient(
+    161.81deg,
+    var(--color--primary-hover) 25%,
+    var(--color--primary) 75%
+  );
+  border: none;
+  border-radius: 4px;
+  text-align: center;
+  cursor: pointer;
+  margin: 0 auto;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  text-shadow: 0 0 2px var(--color--primary-dark);
+  line-height: 1.4;
+}
+
+.button:visited {
+  color: #fff;
+}
+
+.button:hover {
+  background-image: linear-gradient(
+    161.81deg,
+    var(--color--primary-hover) 0,
+    var(--color--primary) 100%
+  );
+}
+
+.button:disabled {
+  background: var(--color--primary-disabled);
+  color: #fff;
+  text-shadow: none;
+  cursor: not-allowed;
+}
+
+.outline {
+  background: transparent;
+  border: 2px solid var(--color--primary);
+  color: var(--color--primary);
+  text-shadow: none;
+}
+
+.outline:visited {
+  color: var(--color--primary);
+}
+
+.outline:hover {
+  background: var(--color--primary);
+  color: #fff;
+}
+
+.flat {
+  background: none;
+  color: var(--color--primary);
+  border: 2px solid transparent;
+  text-shadow: none;
+}
+
+.flat:hover {
+  background: transparent;
+  border: 2px solid var(--color--primary);
+}
+
+.sm {
+  font-size: 0.9rem;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.lg {
+  font-size: 1.25rem;
+}

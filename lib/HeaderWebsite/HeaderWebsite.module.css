@@ -1,0 +1,47 @@
+.header {
+  display: flex;
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 80rem;
+  padding: 3rem;
+}
+
+.header::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80%;
+  height: 15rem;
+  background-image: radial-gradient(
+    ellipse at 50% 0,
+    var(--color--primary-hover) 0%,
+    var(--color--primary) 20%,
+    transparent 70%
+  );
+  opacity: 0.3;
+}
+
+.coloredText {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    161.81deg,
+    var(--color--primary-hover) 25%,
+    var(--color--primary) 75%
+  );
+  display: inline;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.logo {
+  font-size: 3rem;
+  font-weight: bold;
+  text-decoration: none;
+}

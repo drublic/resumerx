@@ -1,0 +1,133 @@
+.layout {
+  position: relative;
+  padding: 3rem;
+}
+
+.layout::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.2;
+  background-image: radial-gradient(var(--color--primary) 1px, transparent 1px),
+    radial-gradient(var(--color--primary) 1px, transparent 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  mask-image: linear-gradient(to bottom, transparent 0, black 30rem);
+}
+
+.coloredText {
+  color: transparent;
+  background-clip: text;
+  background-image: linear-gradient(
+    161.81deg,
+    var(--color--primary-hover) 25%,
+    var(--color--primary) 75%
+  );
+  display: inline;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  margin: 0 auto;
+  max-width: 60rem;
+}
+
+.fullPage {
+  min-height: calc(100vh - 163px - 236px - 10rem);
+  margin-bottom: 10rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 2rem;
+  margin-top: 2rem;
+  margin-bottom: 4rem;
+}
+
+.box {
+  background: rgba(173, 203, 192, 0.4);
+  backdrop-filter: blur(2px);
+  box-shadow: inset 0 0 2000px rgba(173, 203, 192, 0.4);
+  border-radius: 1.5rem;
+  padding: 1rem;
+}
+
+.heroImage {
+  position: absolute;
+  top: -20rem;
+  left: -3rem;
+  right: 0;
+}
+
+.hero {
+  text-align: center;
+  margin: 4rem 0;
+  padding-top: 20vh;
+}
+
+.withLine {
+  position: relative;
+  padding-bottom: 6rem;
+}
+
+.withLine::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 5rem;
+  right: 5rem;
+  height: 2px;
+  background-color: var(--color--primary);
+  opacity: 0.6;
+}
+
+.heroTitle {
+  font-size: 3rem;
+  margin-bottom: 0;
+}
+
+.heroTagline {
+  margin: 0 auto 3rem;
+  max-width: 30rem;
+}
+
+.heroImageBox {
+  position: absolute;
+  z-index: 1;
+  top: -17vh;
+  left: 50%;
+  width: 15rem;
+  transform: translateX(-50%);
+}
+
+.heroImageBox div {
+  height: 10rem;
+}
+
+.heroText {
+  font-weight: bold;
+  color: #fff;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.section {
+  margin: 6rem 0;
+  text-align: center;
+}
+
+.sectionCondensed {
+  margin: 5rem 0 10rem;
+  padding-left: 10rem;
+  padding-right: 10rem;
+}
+
+.emphasizedHeadline {
+  font-size: 4rem;
+  font-weight: bold;
+  text-align: center;
+}

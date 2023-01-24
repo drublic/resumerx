@@ -1,0 +1,58 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  max-width: 30rem;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.wrapper {
+  display: grid;
+  margin-bottom: 1.5rem;
+}
+
+.wrapper::after {
+  content: attr(data-replicated-value) " ";
+  white-space: pre-wrap;
+  visibility: hidden;
+}
+
+.textarea {
+  color: #fff;
+  width: 100%;
+  min-height: 15rem;
+
+  /* You could leave this, but after a user resizes, then it ruins the auto sizing */
+  resize: none;
+
+  /* Firefox shows scrollbar on growth, you can hide like this. */
+  overflow: hidden;
+}
+
+.textarea,
+.wrapper::after {
+  outline-color: #10a37f;
+  background-color: var(--color--background--light);
+  border: 1px solid #10a37f;
+  padding: 0.75rem 1rem;
+  border-radius: 0.25rem;
+  line-height: 1.4;
+
+  /* Place on top of each other */
+  grid-area: 1 / 1 / 2 / 2;
+}
+
+.textarea::placeholder {
+  color: #8e8ea0;
+  opacity: 1;
+}
+
+.loading {
+  width: 10rem;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.loadingText {
+  margin-top: -2rem;
+}

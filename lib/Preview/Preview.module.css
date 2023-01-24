@@ -1,0 +1,25 @@
+.preview {
+  max-width: 60rem;
+  margin: 0 auto;
+}
+
+.toolbar {
+  display: flex;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid var(--color--primary-dark);
+  margin-bottom: 4rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+@media print {
+  .preview {
+    max-width: 100%;
+  }
+
+  .toolbar {
+    display: none;
+  }
+}

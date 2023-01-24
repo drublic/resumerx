@@ -1,0 +1,54 @@
+.history {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.historyIsVisible {
+  opacity: 1;
+}
+
+.history ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  margin-top: 1rem;
+  border-top: 2px solid var(--color--background);
+}
+
+.historyItem {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid var(--color--background);
+  cursor: pointer;
+}
+
+.text {
+  -webkit-box-orient: vertical;
+  display: block;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.9rem;
+  margin-top: 0;
+  margin-bottom: 0.25rem;
+}
+
+.textAside {
+  margin: 0;
+  font-size: 0.75rem;
+}
+
+.tag {
+  display: inline-block;
+  padding: 0.125rem 0.5rem;
+  border-radius: 0.75rem;
+  background-color: var(--color--primary-light);
+  color: var(--color--primary-dark);
+  margin-left: 0.5rem;
+  margin-right: 0.25rem;
+}
+
+.time {
+  color: var(--color--text--dark);
+}

@@ -1,0 +1,47 @@
+.layout {
+  display: grid;
+  grid-template-columns: 3fr 12fr 1fr;
+  grid-gap: 2rem;
+}
+
+.workstation {
+  display: grid;
+  grid-template-columns: 1fr 0fr;
+  grid-gap: 0;
+  margin: 0 auto;
+  padding: 0;
+  transition: all 0.2s ease;
+  margin-top: 1.5rem;
+  width: 100%;
+}
+
+.workstationIsOpen {
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
+  opacity: 1;
+}
+
+.result {
+  overflow: hidden;
+  opacity: 0;
+  transition: opacity 0.2s 0.2s ease;
+}
+
+.resultText {
+  background-color: var(--color--background--light);
+  border-radius: 0.25rem;
+  padding: 1rem;
+}
+
+.workstationIsOpen .result {
+  opacity: 1;
+}
+
+.options {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+}
+
+.option {
+  margin-right: 1em !important;
+}

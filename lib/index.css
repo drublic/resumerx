@@ -1,0 +1,78 @@
+@import url("../node_modules/normalize.css/normalize.css");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "ColfaxAI";
+  src: url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff2)
+      format("woff2"),
+    url(https://cdn.openai.com/API/fonts/ColfaxAIRegular.woff) format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "ColfaxAI";
+  src: url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff2) format("woff2"),
+    url(https://cdn.openai.com/API/fonts/ColfaxAIBold.woff) format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+:root {
+  --color--background: #070d0c;
+  --color--background--light: #111b19;
+  --color--primary-dark: #064434;
+  --color--primary: #10a37f;
+  --color--primary-hover: #17eab6;
+  --color--primary-light: #7fd9c2;
+  --color--primary-disabled: #9bc9be;
+  --color--text: #d3eae8;
+  --color--text--dark: #a1c3c0;
+}
+
+html {
+  font-family: "ColfaxAI", Helvetica, sans-serif;
+  font-size: 16px;
+  line-height: 1.4;
+  color: var(--color--text);
+  background-color: var(--color--background);
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3 {
+  font-weight: bold;
+  color: var(--color--text);
+  margin: 1rem 0 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
+}
+
+a,
+a:visited {
+  color: var(--color--primary);
+}
+
+a:hover {
+  color: var(--color--primary-hover);
+}

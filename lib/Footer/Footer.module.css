@@ -1,0 +1,37 @@
+.footer {
+  display: flex;
+  flex-wrap: wrap;
+  position: relative;
+  z-index: 2;
+  background-color: var(--color--background--light);
+  padding: 5rem 4rem;
+}
+
+.spacer {
+  flex: 1;
+}
+
+.menu {
+  flex: 0 0 100%;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu li {
+  display: inline-block;
+  padding-right: 1rem;
+}
+
+.menu a,
+.menu a:visited {
+  color: var(--color--primary-dark);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--color--primary);
+}

@@ -1,0 +1,90 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  padding-top: 2rem;
+  padding-left: 2rem;
+  background-color: var(--color--background--light);
+  border-right: 1px solid var(--color--primary-dark);
+  min-height: calc(100vh - 67px);
+}
+
+.sidebar h2 {
+  font-size: 1.25rem;
+}
+
+.list {
+  list-style: none;
+  padding: 1rem 0;
+  margin: 0;
+}
+
+.listItem {
+  padding: 0.5rem 0;
+  cursor: pointer;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+  padding-left: 1rem;
+  margin: 0;
+}
+
+.listItemIsSelected {
+  font-weight: bold;
+}
+
+.listItemIsSelected li {
+  font-weight: normal;
+}
+
+.listItemIsSelected .listItemIsSelected {
+  font-weight: bold;
+}
+
+.deleteIcon {
+  display: none;
+  float: right;
+  margin-right: 1rem;
+  padding: 0.25rem;
+  position: relative;
+  top: -0.25rem;
+  border-radius: 0.25rem;
+}
+
+.deleteIcon:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.listItem:hover > .deleteIcon {
+  display: block;
+}
+
+.spacer {
+  flex-grow: 1;
+}
+
+.menu {
+  font-size: 0.9rem;
+  margin: 2rem 2rem 2rem 0;
+}
+
+.menu ul {
+  list-style: none;
+  padding: 0;
+}
+
+.menu li {
+  display: inline;
+  padding-right: 1rem;
+}
+
+.menu a,
+.menu a:visited {
+  color: var(--color--primary-dark);
+  text-decoration: none;
+}
+
+.menu a:hover {
+  color: var(--color--primary);
+}
