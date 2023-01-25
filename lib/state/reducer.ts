@@ -32,10 +32,16 @@ type HistoryUpdateAction = {
   };
 };
 
+type InitAction = {
+  type: "init";
+  payload: State;
+};
+
 export type Actions =
   | CurrentSectionUpdateAction
   | SectionUpdateAction
-  | HistoryUpdateAction;
+  | HistoryUpdateAction
+  | InitAction;
 
 export type State = {
   sections: Section[];
@@ -49,6 +55,11 @@ export const reducer = (state: typeof initialState, action: Actions) => {
   let futureState = { ...state };
 
   switch (action.type) {
+    case "init": {
+      futureState = action.payload;
+      break;
+    }
+
     case "section_update": {
       futureState.sections = action.payload;
       break;
@@ -90,6 +101,12 @@ export const reducer = (state: typeof initialState, action: Actions) => {
 
     default:
       break;
+  }
+
+  try {
+    localStorage.setItem("state", JSON.stringify(futureState));
+  } catch (error) {
+    console.error(`Couldn't store data in localStorage`, error);
   }
 
   return futureState;

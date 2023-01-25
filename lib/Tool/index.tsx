@@ -20,6 +20,29 @@ const Tool = () => {
   const currentSectionRef = useRef(state.currentSection);
 
   useEffect(() => {
+    const readState = () => {
+      try {
+        const state = localStorage.getItem("state");
+
+        return state ? JSON.parse(state) : undefined;
+      } catch (error) {
+        console.error(`Couldn't store data in localStorage`, error);
+      }
+
+      return undefined;
+    };
+
+    const state = readState();
+
+    if (state) {
+      dispatch({
+        type: "init",
+        payload: state,
+      });
+    }
+  }, []);
+
+  useEffect(() => {
     if (
       state.currentSection.section?.id !== currentSectionRef.current.section?.id
     ) {
