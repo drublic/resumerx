@@ -21,7 +21,6 @@ const Icon: FunctionComponent<{
   children,
 }) => {
   const classes = classNames(
-    "material-symbols-outlined",
     styles.icon,
     {
       [styles[`icon-${size}`]]: size,
