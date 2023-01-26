@@ -2,7 +2,6 @@
   display: flex;
   flex-direction: column;
   padding-top: 2rem;
-  padding-left: 2rem;
   background-color: var(--color--background--light);
   border-right: 1px solid var(--color--primary-dark);
   min-height: calc(100vh - 67px);
@@ -10,17 +9,27 @@
 
 .sidebar h2 {
   font-size: 1.25rem;
+  margin-left: 1.5rem;
+}
+
+.hint {
+  color: var(--color--text--dark);
+  font-size: 0.9rem;
+  margin-bottom: 0;
+  margin-right: 1rem;
+  margin-left: 1.5rem;
 }
 
 .list {
   list-style: none;
   padding: 1rem 0;
-  margin: 0;
+  margin: 2rem 0;
 }
 
 .listItem {
-  padding: 0.5rem 0;
+  padding: 0.5rem 1rem 0.5rem 1.5rem;
   cursor: pointer;
+  margin-bottom: 0.5rem;
 }
 
 .list ul {
@@ -32,6 +41,7 @@
 
 .listItemIsSelected {
   font-weight: bold;
+  background-color: var(--color--primary-dark);
 }
 
 .listItemIsSelected li {
@@ -66,7 +76,7 @@
 
 .menu {
   font-size: 0.9rem;
-  margin: 2rem 2rem 2rem 0;
+  margin: 2rem 1.5rem;
 }
 
 .menu ul {

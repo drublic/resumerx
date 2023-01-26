@@ -20,6 +20,12 @@ const Sidebar = ({
         <Icon size="lg">list_alt</Icon> Sections
       </h2>
 
+      <p className={styles.hint}>
+        Sections make organising texts easier.
+        <br />
+        Add your own based on your needs.
+      </p>
+
       <ul className={styles.list}>
         {sections.map((section) => (
           <li key={section.id}>
@@ -37,7 +43,7 @@ const Sidebar = ({
                 onSectionAdd(newSections);
               }}
             />
-
+            {/*
             <ul>
               {section.children?.length > 0 &&
                 section.children.map((child) => (
@@ -69,40 +75,45 @@ const Sidebar = ({
                 ))}
 
               <li className={styles.listItem}>
-                {showAdd === section.id ? (
-                  <Add
-                    onSave={(value: string) => {
-                      if (value === "") return;
+                {
+                  showAdd === section.id ? (
+                    <Add
+                      onSave={(value: string) => {
+                        if (value === "") return;
 
-                      const newSections = sections.map((item) => {
-                        if (item.id === section.id) {
-                          return {
-                            ...item,
-                            children: [
-                              ...item.children,
-                              {
-                                id: value.toLowerCase().replace(" ", "-"),
-                                title: value,
-                                history: [],
-                              },
-                            ],
-                          };
-                        }
+                        const newSections = sections.map((item) => {
+                          if (item.id === section.id) {
+                            return {
+                              ...item,
+                              children: [
+                                ...item.children,
+                                {
+                                  id: value.toLowerCase().replace(" ", "-"),
+                                  title: value,
+                                  history: [],
+                                },
+                              ],
+                            };
+                          }
 
-                        return item;
-                      });
+                          return item;
+                        });
 
-                      onSectionAdd(newSections);
-                      setShowAdd(undefined);
-                    }}
-                  />
-                ) : (
-                  <div onClick={() => setShowAdd(section.id)}>
-                    <Icon size="sm">add_circle</Icon> Add Sub-Section
-                  </div>
-                )}
+                        onSectionAdd(newSections);
+                        setShowAdd(undefined);
+                      }}
+                    />
+                  ) : null
+
+                  // (
+                  //   <div onClick={() => setShowAdd(section.id)}>
+                  //     <Icon size="sm">add_circle</Icon> Add Sub-Section
+                  //   </div>
+                  // )
+                }
               </li>
             </ul>
+              */}
           </li>
         ))}
 
