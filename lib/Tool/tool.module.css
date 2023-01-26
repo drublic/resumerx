@@ -22,6 +22,7 @@
 }
 
 .result {
+  height: 50vh;
   overflow: hidden;
   opacity: 0;
   transition: opacity 0.2s 0.2s ease;
@@ -35,6 +36,7 @@
 
 .workstationIsOpen .result {
   opacity: 1;
+  height: auto;
 }
 
 .options {
