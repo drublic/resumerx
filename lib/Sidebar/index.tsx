@@ -1,4 +1,3 @@
-import classNames from "classnames";
 import Link from "next/link";
 import { useState } from "react";
 import Icon from "../Icon";
@@ -7,8 +6,10 @@ import Item from "./Item";
 import styles from "./Sidebar.module.css";
 
 const Sidebar = ({
+  moods,
   sections,
   currentSection,
+  onChangeMood,
   onSectionSelect,
   onSectionAdd,
 }) => {
@@ -16,6 +17,30 @@ const Sidebar = ({
 
   return (
     <div className={styles.sidebar}>
+      {moods && (
+        <>
+          <h2>
+            <Icon size="lg">mood</Icon> Mood
+          </h2>
+
+          <p className={styles.hint}>Set a mood for all your CV's texts.</p>
+
+          <div className={styles.selectWrapper}>
+            <select className={styles.select} onChange={onChangeMood}>
+              {Object.entries(moods).map(([key, mood]: [string, any]) => (
+                <option key={key} value={key}>
+                  {mood.title}
+                </option>
+              ))}
+            </select>
+
+            <Icon className={styles.selectArrow} size="lg">
+              expand_more
+            </Icon>
+          </div>
+        </>
+      )}
+
       <h2>
         <Icon size="lg">list_alt</Icon> Sections
       </h2>

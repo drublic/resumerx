@@ -15,6 +15,7 @@ const Tool = () => {
   const [result, setResult] = useState<string>(undefined);
   const [errorMessage, setErrorMessage] = useState<string>("");
   const [options, setOptions] = useState<Record<string, any>>();
+  const [moods, setMoods] = useState<Record<string, any>>();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const { state, dispatch } = useContext(StateContext);
   const currentSectionRef = useRef(state.currentSection);
@@ -61,6 +62,10 @@ const Tool = () => {
     }
   }, [isLoading]);
 
+  useEffect(() => {
+    loadOptions();
+  }, []);
+
   const onSubmit = async (
     event?: SyntheticEvent,
     params: { option?: string } = {}
@@ -77,6 +82,7 @@ const Tool = () => {
         },
         body: JSON.stringify({
           text: textInput,
+          mood: state.mood,
           ...params,
         }),
       });
@@ -90,7 +96,6 @@ const Tool = () => {
         );
       }
 
-      !options && loadOptions();
       setResult(data.result);
 
       dispatch({
@@ -128,6 +133,7 @@ const Tool = () => {
       }
 
       setOptions(data.options);
+      setMoods(data.moods);
     } catch (error) {
       console.error(error);
       setErrorMessage(error.message);
@@ -137,6 +143,7 @@ const Tool = () => {
   return (
     <main className={styles.layout}>
       <Sidebar
+        moods={moods}
         sections={state.sections}
         currentSection={state.currentSection}
         onSectionSelect={(section: Section, child?: Section) => {
@@ -154,6 +161,12 @@ const Tool = () => {
             payload: sections,
           })
         }
+        onChangeMood={(event) => {
+          dispatch({
+            type: "mood_update",
+            payload: event.target.value,
+          });
+        }}
       />
 
       <div

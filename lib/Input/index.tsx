@@ -46,7 +46,9 @@ const Input = ({
         <div className={styles.loading}>
           <Animation path="/animations/loading.json" />
 
-          <p className={styles.loadingText}>Generating Result</p>
+          <p className={styles.loadingText}>
+            Generating Result… this might take a couple of seconds.
+          </p>
         </div>
       )}
     </form>

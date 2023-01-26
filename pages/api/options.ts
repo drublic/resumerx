@@ -1,3 +1,30 @@
+export const Moods = {
+  professional: {
+    title: "Professional",
+    command: "professional",
+  },
+  easygoing: {
+    title: "Easy-going",
+    command: "easy-going",
+  },
+  funny: {
+    title: "Funny",
+    command: "funny",
+  },
+  conservative: {
+    title: "Conservative",
+    command: "conservative",
+  },
+  humble: {
+    title: "Humble",
+    command: "humble",
+  },
+  confident: {
+    title: "Confident",
+    command: "confident",
+  },
+};
+
 export const Options = {
   default: {
     title: "Default",
@@ -31,5 +58,6 @@ export const Options = {
 export default async function (req, res) {
   return res.status(200).json({
     options: Options,
+    moods: Moods,
   });
 }

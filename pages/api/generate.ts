@@ -1,5 +1,5 @@
 import { Configuration, OpenAIApi } from "openai";
-import { Options } from "./options";
+import { Moods, Options } from "./options";
 
 const configuration = new Configuration({
   apiKey: process.env.OPENAI_API_KEY,
@@ -22,6 +22,7 @@ export default async function (req, res) {
 
   const resumeText = req.body.text || "";
   const option = req.body.option || "default";
+  const mood = req.body.mood || "professional";
 
   if (resumeText.trim().length === 0) {
     res.status(400).json({
@@ -31,6 +32,7 @@ export default async function (req, res) {
     });
     return;
   }
+  console.log(generatePrompt(resumeText, { option, mood }));
 
   try {
     const isMock = process.env.OPENAI_MOCK === "true";
@@ -44,7 +46,7 @@ export default async function (req, res) {
 
     const completion = await openai.createCompletion({
       model: "text-davinci-003",
-      prompt: generatePrompt(option, resumeText),
+      prompt: generatePrompt(resumeText, { option, mood }),
       temperature: Options[option].temperature,
       max_tokens: 400,
     });
@@ -66,8 +68,18 @@ export default async function (req, res) {
   }
 }
 
-const generatePrompt = (type: keyof typeof Options, resumeText: string) => {
-  return `${Options[type].command}
+type PromptOptions = {
+  option: keyof typeof Options;
+  mood: keyof typeof Moods;
+};
+
+const generatePrompt = (
+  resumeText: string,
+  { option, mood }: PromptOptions
+) => {
+  return `${Options[option].command}${
+    mood ? ` in a ${Moods[mood].command} tonality` : ""
+  }
 
     ${sanitize(resumeText)}`;
 };

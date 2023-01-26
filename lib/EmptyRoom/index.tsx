@@ -12,13 +12,14 @@ const EmptyRoom = () => {
       <p>Follow these steps to get started.</p>
 
       <ol className={styles.list}>
+        <li>Select an overall mood on the left for your CV tests.</li>
         <li>Select a CV section on the left or create your own.</li>
         <li>Enter your information in the input field.</li>
         <li>Click the "Generate Optimized Solution" button.</li>
         <li>
           Copy the optimized version to your clipboard or continue optimizing.
         </li>
-        <li>Repeat steps 1-4 for each section.</li>
+        <li>Repeat steps 2-5 for each section.</li>
       </ol>
 
       <p>🎉 You are good to roll.</p>

@@ -32,6 +32,11 @@ type HistoryUpdateAction = {
   };
 };
 
+type MoodUpdateAction = {
+  type: "mood_update";
+  payload: string;
+};
+
 type InitAction = {
   type: "init";
   payload: State;
@@ -41,6 +46,7 @@ export type Actions =
   | CurrentSectionUpdateAction
   | SectionUpdateAction
   | HistoryUpdateAction
+  | MoodUpdateAction
   | InitAction;
 
 export type State = {
@@ -49,6 +55,7 @@ export type State = {
     section?: Section;
     child?: Section;
   };
+  mood?: string;
 };
 
 export const reducer = (state: typeof initialState, action: Actions) => {
@@ -99,6 +106,11 @@ export const reducer = (state: typeof initialState, action: Actions) => {
       break;
     }
 
+    case "mood_update": {
+      futureState.mood = action.payload;
+      break;
+    }
+
     default:
       break;
   }
@@ -128,4 +140,5 @@ export const initialState: State = {
     },
   ],
   currentSection: {},
+  mood: undefined,
 };
