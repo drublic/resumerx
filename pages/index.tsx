@@ -30,7 +30,7 @@ export default () => {
         <main className={styles.main}>
           <div className={classNames(styles.hero, styles.withLine)}>
             <div className={classNames(styles.heroImageBox, styles.box)}>
-              <p className={styles.heroText}>Enhance your CV</p>
+              <p className={styles.heroText}>Optimize your CV</p>
               <Animation path="/animations/cv.json" speed={0.2} />
             </div>
 
@@ -40,11 +40,13 @@ export default () => {
             </h1>
             <p className={styles.heroTagline}>
               Unlock your full potential with our{" "}
-              <strong>free AI-powered platform</strong> and elevate your CV to
+              <strong>AI-powered platform</strong> and let it edit your CV to
               new heights. Build on OpenAI's GPT-3 API.
+              <br />
+              It's 100% free. Promised.
             </p>
 
-            <Button href="/tool">Enhance Your CV Now</Button>
+            <Button href="/tool">Review your CV now</Button>
           </div>
 
           <section className={classNames(styles.section, styles.withLine)}>
