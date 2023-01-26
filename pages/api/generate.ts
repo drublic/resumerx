@@ -32,7 +32,6 @@ export default async function (req, res) {
     });
     return;
   }
-  console.log(generatePrompt(resumeText, { option, mood }));
 
   try {
     const isMock = process.env.OPENAI_MOCK === "true";
