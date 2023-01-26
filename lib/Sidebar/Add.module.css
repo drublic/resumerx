@@ -1,9 +1,14 @@
+.add {
+  display: flex;
+}
+
 .input {
-  width: 100%;
+  width: 0;
+  flex-grow: 1;
+  margin-right: 0.5rem;
   padding: 0.5rem;
   border: 1px solid var(--color--primary);
   background-color: var(--color--primary-dark);
   color: #fff;
   border-radius: 0.25rem;
-  margin-bottom: 0.5rem;
 }

@@ -122,16 +122,16 @@ const Sidebar = ({
             <Add
               onSave={(value: string) => {
                 if (value === "") return;
-
                 onSectionAdd([
                   ...sections,
-                  [
-                    {
-                      id: value.toLowerCase().replace(" ", "-"),
-                      title: value,
-                      history: [],
-                    },
-                  ],
+                  {
+                    id:
+                      value.toLowerCase().replace(" ", "-") +
+                      `-${sections.length}`,
+                    title: value,
+                    history: [],
+                    children: [],
+                  },
                 ]);
 
                 setShowAdd(undefined);

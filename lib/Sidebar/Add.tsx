@@ -6,7 +6,7 @@ const Add = ({ onSave }) => {
   const [value, setValue] = useState<string>("");
 
   return (
-    <>
+    <div className={styles.add}>
       <input
         type="text"
         value={value}
@@ -24,7 +24,7 @@ const Add = ({ onSave }) => {
       >
         Add
       </Button>
-    </>
+    </div>
   );
 };
 

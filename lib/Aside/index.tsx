@@ -42,7 +42,7 @@ const Aside = ({ onHistorySelect }) => {
       return true;
     }
 
-    return children.find(({ id }) => id === currentSection.section?.id);
+    return children?.find(({ id }) => id === currentSection.section?.id);
   })?.history;
 
   return (
