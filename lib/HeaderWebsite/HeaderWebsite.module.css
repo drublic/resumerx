@@ -4,7 +4,7 @@
   z-index: 2;
   margin: 0 auto;
   max-width: 80rem;
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .header::before {
@@ -41,7 +41,17 @@
 }
 
 .logo {
-  font-size: 3rem;
+  font-size: 2rem;
   font-weight: bold;
   text-decoration: none;
+}
+
+@media (min-width: 32em) {
+  .header {
+    padding: 3rem;
+  }
+
+  .logo {
+    font-size: 3rem;
+  }
 }
