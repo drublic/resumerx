@@ -1,4 +1,3 @@
-import Link from "next/link";
 import Script from "next/script";
 import classNames from "classnames";
 import styles from "./index.module.css";
