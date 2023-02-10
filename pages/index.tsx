@@ -76,7 +76,7 @@ export default () => {
                 <h3>Use Texts in Your CV</h3>
                 <p>
                   Boost your CV's impact with ResumerX's optimized text. Just
-                  copy and paste them into your CV .
+                  copy and paste them into your CV.
                 </p>
               </div>
             </div>
