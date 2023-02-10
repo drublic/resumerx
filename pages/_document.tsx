@@ -22,6 +22,11 @@ export default function Document() {
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0"
         />
 
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.css"
+        />
+
         <meta property="twitter:domain" content="resumerx.me" />
         <meta name="twitter:site" content="@drublic" />
         <meta name="twitter:title" content={title} />
@@ -53,6 +58,27 @@ export default function Document() {
       <body>
         <Main />
         <NextScript />
+
+        <Script
+          src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
+          data-cfasync="false"
+        />
+        <Script>
+          {`
+            window.cookieconsent.initialise({
+              "palette": {
+                "popup": {
+                  "background": "#252e39"
+                },
+                "button": {
+                  "background": "#14a7d0"
+                }
+              },
+              "position": "bottom-left",
+              "type": "opt-out"
+            });
+          `}
+        </Script>
       </body>
     </Html>
   );
