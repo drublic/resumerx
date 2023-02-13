@@ -6,6 +6,7 @@ import Animation from "../lib/Lottie/Animation";
 import Footer from "../lib/Footer";
 import HeaderWebsite from "../lib/HeaderWebsite";
 import Head from "next/head";
+import Link from "next/link";
 
 export default () => {
   return (
@@ -46,6 +47,12 @@ export default () => {
             </p>
 
             <Button href="/tool">Review your CV now</Button>
+
+            <p>
+              This is a project by <Link href="/about">Hans</Link> &ndash; no
+              agency or anything. <Link href="/my-data">Your data</Link> is not
+              stored.
+            </p>
           </div>
 
           <section className={classNames(styles.section, styles.withLine)}>
