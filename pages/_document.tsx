@@ -16,7 +16,7 @@ export default function Document() {
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
-          crossOrigin="crossorigin"
+          crossOrigin=""
         />
         <link
           rel="stylesheet"
