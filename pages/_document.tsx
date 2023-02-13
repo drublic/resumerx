@@ -60,26 +60,28 @@ export default function Document() {
         <Main />
         <NextScript />
 
-        <Script
+        <script
           src="https://cdn.jsdelivr.net/npm/cookieconsent@3/build/cookieconsent.min.js"
           data-cfasync="false"
         />
-        <Script>
-          {`
-            window.cookieconsent.initialise({
-              "palette": {
-                "popup": {
-                  "background": "#252e39"
-                },
-                "button": {
-                  "background": "#14a7d0"
-                }
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+          window.cookieconsent.initialise({
+            "palette": {
+              "popup": {
+                "background": "#111b19"
               },
-              "position": "bottom-left",
-              "type": "opt-out"
-            });
-          `}
-        </Script>
+              "button": {
+                "background": "#064434"
+              }
+            },
+            "position": "bottom-left",
+            "type": "opt-out"
+          });
+        `,
+          }}
+        />
       </body>
     </Html>
   );
