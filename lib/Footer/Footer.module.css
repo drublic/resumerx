@@ -4,7 +4,7 @@
   position: relative;
   z-index: 2;
   background-color: var(--color--background--light);
-  padding: 5rem 4rem;
+  padding: 2rem 1rem;
 }
 
 .spacer {
@@ -34,4 +34,10 @@
 
 .menu a:hover {
   color: var(--color--primary);
+}
+
+@media (min-width: 32em) {
+  .footer {
+    padding: 5rem 4rem;
+  }
 }
