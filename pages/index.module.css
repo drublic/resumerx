@@ -131,6 +131,44 @@
   text-align: center;
 }
 
+.browserFrame {
+  position: relative;
+  border-radius: 0.75rem 0.75rem 0 0;
+  background: #e6ecef55;
+  padding: 0 0.25rem 0;
+  margin: 4rem 0;
+}
+
+.browserFrame::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -1rem;
+  right: -1rem;
+  height: 2px;
+  background-color: var(--color--primary);
+}
+
+.browserFrame img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.browserControls {
+  display: flex;
+  padding: 1rem;
+}
+
+.browserControls span {
+  width: 0.625rem;
+  height: 0.625rem;
+  border-radius: 50%;
+  background: #e6ecefaa;
+  margin-right: 0.5rem;
+}
+
 @media (min-width: 32em) {
   .layout {
     padding: 3rem;
@@ -187,6 +225,15 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 2rem;
+  }
+
+  .browserFrame {
+    margin: 7rem 2rem;
+  }
+
+  .browserFrame::after {
+    left: -4rem;
+    right: -4rem;
   }
 }
 

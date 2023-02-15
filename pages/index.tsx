@@ -7,6 +7,7 @@ import Footer from "../lib/Footer";
 import HeaderWebsite from "../lib/HeaderWebsite";
 import Head from "next/head";
 import Link from "next/link";
+import Image from "next/image";
 
 export default () => {
   return (
@@ -28,7 +29,7 @@ export default () => {
 
       <div className={styles.layout}>
         <main className={styles.main}>
-          <div className={classNames(styles.hero, styles.withLine)}>
+          <div className={classNames(styles.hero)}>
             <div className={classNames(styles.heroImageBox, styles.box)}>
               <p className={styles.heroText}>Optimize your CV</p>
               <Animation path="/animations/cv.json" speed={0.2} />
@@ -53,6 +54,16 @@ export default () => {
               agency or anything. <Link href="/my-data">Your data</Link> is not
               stored.
             </p>
+          </div>
+
+          <div className={styles.browserFrame}>
+            <div className={styles.browserControls}>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+
+            <Image src="/tool.jpg" alt="The tool" width={1437} height={788} />
           </div>
 
           <section className={classNames(styles.section, styles.withLine)}>
