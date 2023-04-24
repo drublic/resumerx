@@ -1,13 +1,16 @@
 import React, { FunctionComponent } from "react";
+import type { AppProps } from "next/app";
+import { Analytics } from "@vercel/analytics/react";
 import "../lib/index.css";
 
-type Props = {
-  Component: any;
-  pageProps: any;
-};
+const MyApp: FunctionComponent<AppProps> = ({ Component, pageProps }) => {
+  return (
+    <>
+      <Component {...pageProps} />
 
-const MyApp: FunctionComponent<Props> = ({ Component, pageProps }) => {
-  return <Component {...pageProps} />;
+      <Analytics />
+    </>
+  );
 };
 
 export default MyApp;
